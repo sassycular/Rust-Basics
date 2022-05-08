@@ -1,0 +1,77 @@
+// Basic code for declaring a variable, types of variables, composite types, control flow, and loops.
+// Guided by Questbook https://www.youtube.com/playlist?list=PLeShFtA-ZIOVo7H59Gq-LA0Go1EiUs-vk
+
+// CODE BEGINS BELOW
+
+//to display data type
+trait TypeDebug{
+    fn print_type(&self);
+}
+
+impl<T> TypeDebug for T { 
+    fn print_type(&self){
+        println!("The type is '{}'", std::any::type_name::<T>());
+    }
+}
+
+//defining data type and assigning var
+fn main() {
+    let a: i32 = 7;
+    println!("The value of the variable is {}", a);
+    a.print_type();
+
+    let b = 3.14;
+    b.print_type();
+
+    let c = true;
+    c.print_type();
+
+    //tuples - return a set of values, has to have 3 values  
+    let d = (7, "Hello World", true);
+    println!("The first two elements are {}, {}", d.0, d.1);
+
+    let e = (8,9,1);
+    let val_one = e.0;
+    let val_two = e.1;
+    let val_three = e.2;
+    println!("The first element is {}, the second element is {}, the third element is {}", val_one, val_two, val_three);
+    
+    let (val_1, val_2, _) = e;
+    println!("The first element is {}, the second element is {}", val_1, val_2);
+
+    //arrays - returns set of values, use box brackets
+    let f = [1, 2, 3, 4];
+    println!("The first element of the array is {}", f[0]);
+
+    let g: [i32; 10] = [0; 10];
+    println!("The array is: {:?}", g);
+
+    //control flow 
+    //if-else
+    let h = 3;
+    if h == 1 {
+        println!("You won!");
+    }
+    else if h==2 {
+        println!("Try again!");
+    }
+    else {
+        println!("You lost!");
+    }
+
+    //loop
+    //print values upto 5000
+    let mut i = 1;
+    loop {
+        i = i * 2;
+        println!("The value of i is: {}", i);
+        if i > 5000 {
+            break;
+        }
+    }
+    println!("Outside the loop")
+
+    //writing same loop with a while construct 
+    //while loop runs until condition is true 
+
+}
