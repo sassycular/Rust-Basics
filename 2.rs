@@ -1,5 +1,6 @@
 // TODO Read two numbers from Command Line Arguments and print the sum of the numbers 
 // install the crate text_io - needed for this code 
+// dependencies: text_io = "0.1.10"
 
 #[macro_use] extern crate text_io;
 fn main(){
